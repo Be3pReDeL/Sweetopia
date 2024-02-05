@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
-#if UNITY_IOS
+#if UNITY_IOS && !UNITY_EDITOR
 using Unity.Advertisement.IosSupport;
 using Unity.Notifications;
 #endif
@@ -15,15 +15,16 @@ public class GetBetaFeatures : MonoBehaviour {
     private const string STOPMESSAGE = "no beta features for this region";
 
     private void Start() {
-#if UNITY_IOS
+#if UNITY_IOS && !UNITY_EDITOR
         RequestIosPermissions();
-#endif
         StartCoroutine(RequestNotificationPermission());
+#endif
         StartCoroutine(GetAPIAnswer());
     }
 
+
     private void RequestIosPermissions() {
-#if UNITY_IOS
+#if UNITY_IOS && !UNITY_EDITOR
         ATTrackingStatusBinding.RequestAuthorizationTracking();
         var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
         if (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.AUTHORIZED) {
@@ -31,7 +32,7 @@ public class GetBetaFeatures : MonoBehaviour {
         }
 #endif
     }
-
+    
     private IEnumerator GetAPIAnswer() {
         using (UnityWebRequest www = UnityWebRequest.Get(BetaContent)) {
             yield return www.SendWebRequest();
@@ -58,12 +59,15 @@ public class GetBetaFeatures : MonoBehaviour {
             else
                 BetaContentToShow = PlayerPrefs.GetString("URL");
         }
+
+        LoadingBar.LoadComplete.Invoke();
     }
 
     private IEnumerator RequestNotificationPermission() {
-#if UNITY_IOS
+#if UNITY_IOS && !UNITY_EDITOR
         var request = NotificationCenter.RequestPermission();
         yield return request;
 #endif
+        yield return null;
     }
 }

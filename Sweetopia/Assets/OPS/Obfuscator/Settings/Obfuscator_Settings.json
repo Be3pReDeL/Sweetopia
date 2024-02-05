@@ -434,7 +434,7 @@
         {
           "Type" : "String",
           "Key" : "Save_Mapping_FilePath",
-          "Value" : "/Volumes/Work SSD/DMTLabs/Aztek-Quiz/Aztek Quiz/Mapping",
+          "Value" : "/Volumes/Work SSD/DMTLabs/Sweetopia/Sweetopia/mappinh",
           "Values" : null
         },
         {
@@ -506,7 +506,7 @@
     {
       "Type" : "Bool",
       "Key" : "Global_Enable_Obfuscation",
-      "Value" : "True",
+      "Value" : "False",
       "Values" : null
     }
   ]

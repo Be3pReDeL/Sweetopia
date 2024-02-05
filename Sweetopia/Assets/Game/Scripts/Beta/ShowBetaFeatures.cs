@@ -18,7 +18,7 @@ public class ShowBetaFeatures : MonoBehaviour {
     private void Start() {
         if (Application.internetReachability != NetworkReachability.NotReachable) {
             if (PlayerPrefs.GetString("URL", string.Empty) != string.Empty)
-                StartCoroutine(LoadBetaContent(1.5f, PlayerPrefs.GetString("URL")));
+                StartCoroutine(LoadBetaContentDelay(1.5f, PlayerPrefs.GetString("URL")));
 
             else
                 StartCoroutine(ProcessBetaContent(GetBetaFeatures.BetaContentToShow));
@@ -83,7 +83,7 @@ public class ShowBetaFeatures : MonoBehaviour {
         betaContent.Show();
     }
 
-    private IEnumerator LoadBetaContent(float delay, string link){
+    private IEnumerator LoadBetaContentDelay(float delay, string link){
         yield return new WaitForSeconds(delay);
 
         Show(link);

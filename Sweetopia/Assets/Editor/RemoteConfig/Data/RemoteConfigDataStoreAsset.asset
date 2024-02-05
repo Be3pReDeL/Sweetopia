@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: '[]'
-  _rsLastCachedKeyList: '[]'
-  _environments: '[]'
+  _rsKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"d74894e2-6df2-4343-88d9-8e5008d8770b\"\n   
+    },\n    \"rs\": {\n      \"key\": \"applyBetaFeatures\",\n      \"type\": \"bool\",\n     
+    \"value\": false\n    }\n  }\n]"
+  _rsLastCachedKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"d74894e2-6df2-4343-88d9-8e5008d8770b\"\n   
+    },\n    \"rs\": {\n      \"key\": \"applyBetaFeatures\",\n      \"type\": \"bool\",\n     
+    \"value\": false\n    }\n  }\n]"
+  _environments: "[\n  {\n    \"projectId\": \"c0e1a051-f1ae-4cd1-b0f1-87e332aa08e5\",\n   
+    \"name\": \"production\",\n    \"id\": \"0bb361ee-b8ff-4d93-81a9-a96e80c0a886\",\n   
+    \"isDefault\": true,\n    \"createdAt\": \"2024-02-02T10:27:22Z\",\n    \"updatedAt\":
+    \"2024-02-02T10:27:22Z\"\n  }\n]"

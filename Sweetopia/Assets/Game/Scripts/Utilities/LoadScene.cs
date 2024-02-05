@@ -19,7 +19,7 @@ public class LoadScene : MonoBehaviour
     } 
 
     [OPS.Obfuscator.Attribute.DoNotRename]
-    public static void LoadSceneByRelativeIndex(int index){
+    public static void LoadSceneByRelativeIndex(int index = 0){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + index);
     } 
 }
